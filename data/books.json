@@ -223,7 +223,7 @@
         },
         {
           "shelf": "iliad",
-          "why": "April 2025"
+          "why": "June 25, 2025"
         },
         {
           "shelf": "siddhartha",
@@ -258,7 +258,7 @@
       "related": [
         {
           "shelf": "iliad",
-          "why": "April 2025"
+          "why": "June 25, 2025"
         },
         {
           "shelf": "agamemnon",
@@ -272,9 +272,6 @@
       "subtitle": "The Anger of Achilles, translated by Robert Graves",
       "author": "Homer",
       "status": "finished",
-      "dateLabel": "April 2025",
-      "datesApproximate": true,
-      "sortDate": "2025-04",
       "cover": "covers/iliad.jpg",
       "edition": {
         "publisher": "Penguin Classics",
@@ -299,7 +296,8 @@
           "shelf": "agamemnon",
           "why": "Started Nov 10"
         }
-      ]
+      ],
+      "finished": "2025-06-25"
     },
     {
       "id": "samadhi-of-water",
@@ -385,7 +383,7 @@
       "related": [
         {
           "shelf": "iliad",
-          "why": "April 2025"
+          "why": "June 25, 2025"
         },
         {
           "shelf": "odyssey",

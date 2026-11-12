@@ -111,9 +111,11 @@
     return primary + ":" + String(tie).padStart(6, "0");
   }
   function volumeHTML(b, i) {
-    var status = isFinished(b)
-      ? (b.dateLabel || fmt(b.finished).replace(/^(\w+) \d+, /, "$1 "))
-      : STATUS.reading;
+    var status;
+    if (!isFinished(b)) status = STATUS.reading;
+    else if (b.dateLabel) status = b.dateLabel;
+    else if (b.finished && !b.started) status = fmt(b.finished, true);
+    else status = fmt(b.finished).replace(/^(\w+) \d+, /, "$1 ");
     return '<a class="volume' + (isFinished(b) ? "" : " reading") + '" href="book.html?id=' + encodeURIComponent(b.id) + '" style="--i:' + i + '">' +
       '<span class="cover"><img src="' + esc(b.cover) + '" alt="Cover of ' + esc(b.title) + ', ' + esc((b.edition && b.edition.publisher) || "") + ' edition"></span>' +
       '<span class="caption"><span class="t">' + esc(b.title) + "</span>" +
@@ -198,6 +200,7 @@
     var facts = [];
     if (b.dateLabel) facts.push(["Read", b.dateLabel]);
     else if (b.started) facts.push(["Read", range(b)]);
+    else if (b.finished) facts.push(["Read", "Finished " + fmt(b.finished, true)]);
     if (b.started && b.finished && !b.datesApproximate) facts.push(["Took", daysBetween(b.started, b.finished) + " days"]);
     else if (b.started && !isFinished(b)) facts.push(["So far", daysBetween(b.started, todayISO()) + " days"]);
     if (b.progress && (b.progress.label || b.progress.asOf)) {
