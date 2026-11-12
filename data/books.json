@@ -14,7 +14,7 @@
         "details": "The 1818 text, introduction by Charlotte Gordon",
         "format": "Paperback",
         "isbn": "9780143131847",
-        "pages": "pp. 3–216"
+        "pages": "216 pages"
       },
       "pagesPerDay": [
         [
@@ -117,7 +117,7 @@
         "details": "Translated by Joachim Neugroschel, cover by Jessica Hische",
         "format": "Hardcover (library copy)",
         "isbn": "9780143124337",
-        "pages": "209 pp."
+        "pages": "209 pages"
       },
       "pagesPerDay": [
         [
@@ -160,6 +160,10 @@
           "why": "Oct 26 – Nov 3"
         },
         {
+          "shelf": "samadhi-of-water",
+          "why": "Aug – Oct 2026"
+        },
+        {
           "title": "The Dhammapada",
           "author": "trans. Eknath Easwaran",
           "cover": "covers/dhammapada.jpg",
@@ -200,17 +204,13 @@
       "cover": "covers/agamemnon.jpg",
       "edition": {
         "publisher": "Penguin Classics",
-        "details": "The Oresteia, translated by Robert Fagles. Agamemnon runs pp. 99–172 in this volume.",
+        "details": "The Oresteia, translated by Robert Fagles",
         "format": "Paperback",
         "isbn": "9780140443332",
-        "pages": "74 pp. (pp. 99–172)"
+        "pages": "74 pages"
       },
       "progress": {
-        "at": 136,
-        "from": 99,
-        "to": 172,
-        "pagesRead": 37,
-        "pagesTotal": 74,
+        "label": "About halfway",
         "asOf": "2026-11-11"
       },
       "notes": [],
@@ -218,20 +218,142 @@
       "authorNote": "Aeschylus (c. 525–456 BC) was an Athenian tragic poet, often called the father of Greek tragedy. The Oresteia, first performed in 458 BC, is his only trilogy to survive complete: Agamemnon, The Libation Bearers, and The Eumenides. It won first prize at the City Dionysia that year. Of the eighty or so plays he wrote, seven survive.",
       "related": [
         {
+          "shelf": "odyssey",
+          "why": "c. late May – June 2026"
+        },
+        {
+          "shelf": "iliad",
+          "why": "c. April 2025"
+        },
+        {
           "shelf": "siddhartha",
           "why": "Nov 3–8"
         },
         {
           "shelf": "frankenstein",
           "why": "Oct 26 – Nov 3"
+        }
+      ]
+    },
+    {
+      "id": "odyssey",
+      "title": "The Odyssey",
+      "subtitle": "",
+      "author": "Homer",
+      "status": "finished",
+      "dateLabel": "c. late May – June 2026",
+      "datesApproximate": true,
+      "sortDate": "2026-06",
+      "cover": "covers/odyssey.jpg",
+      "edition": {
+        "publisher": "Penguin Classics",
+        "details": "Deluxe Edition, translated by Robert Fagles, introduction and notes by Bernard Knox",
+        "format": "Paperback",
+        "isbn": "9780143039952",
+        "pages": "541 pages"
+      },
+      "notes": [],
+      "companions": [],
+      "authorNote": "Homer is the name given to the poet — or poets — of the Iliad and the Odyssey, the Greek epics traditionally dated to the late eighth or early seventh century BC. Almost nothing about the historical author is known with certainty; the poems were composed in a long oral tradition and later written down. They stand at the beginning of the Western literary canon, and at the beginning of my own list from Homer to Shakespeare.",
+      "related": [
+        {
+          "shelf": "iliad",
+          "why": "c. April 2025"
         },
         {
-          "title": "The Odyssey",
-          "author": "Homer, trans. Robert Fagles",
-          "cover": "covers/odyssey.jpg",
-          "status": "read",
-          "url": "https://openlibrary.org/works/OL61982W",
-          "why": "Read in 2026"
+          "shelf": "agamemnon",
+          "why": "Started Nov 10"
+        }
+      ]
+    },
+    {
+      "id": "iliad",
+      "title": "The Iliad",
+      "subtitle": "The Anger of Achilles, translated by Robert Graves",
+      "author": "Homer",
+      "status": "finished",
+      "dateLabel": "c. April 2025",
+      "datesApproximate": true,
+      "sortDate": "2025-04",
+      "cover": "covers/iliad.jpg",
+      "edition": {
+        "publisher": "Penguin Classics",
+        "details": "The Anger of Achilles, translated and introduced by Robert Graves (1959). This is the 2009 Penguin Classics reissue.",
+        "format": "Paperback",
+        "isbn": "9780140455601",
+        "pages": "384 pages"
+      },
+      "notes": [],
+      "companions": [],
+      "authorNote": "Homer is the name given to the poet — or poets — of the Iliad and the Odyssey, the Greek epics traditionally dated to the late eighth or early seventh century BC. Almost nothing about the historical author is known with certainty; the poems were composed in a long oral tradition and later written down. They stand at the beginning of the Western literary canon, and at the beginning of my own list from Homer to Shakespeare.",
+      "related": [
+        {
+          "shelf": "odyssey",
+          "why": "c. late May – June 2026"
+        },
+        {
+          "shelf": "agamemnon",
+          "why": "Started Nov 10"
+        }
+      ]
+    },
+    {
+      "id": "samadhi-of-water",
+      "title": "Samadhi of Water",
+      "subtitle": "An Introduction to the Jaya Samyama of Patanjali's Yoga Sutra",
+      "author": "Ryan Kurczak",
+      "status": "finished",
+      "dateLabel": "Aug – Oct 2026",
+      "datesApproximate": true,
+      "sortDate": "2026-10",
+      "cover": "covers/samadhi.jpg",
+      "edition": {
+        "publisher": "Yoga Science Press",
+        "details": "Yoga Science Press, 2026",
+        "format": "Paperback",
+        "isbn": "9798996068401",
+        "pages": "258 pages"
+      },
+      "notes": [],
+      "companions": [],
+      "authorNote": "Ryan Kurczak is a Kriya Yoga teacher and the author of The Samadhi of Water (2026), an introduction to the jaya samyama practices of Patanjali's Yoga Sutra, focused on the water element.",
+      "related": [
+        {
+          "shelf": "yoga-sutras",
+          "why": "Aug – Oct 2026"
+        },
+        {
+          "shelf": "siddhartha",
+          "why": "Nov 3–8"
+        }
+      ]
+    },
+    {
+      "id": "yoga-sutras",
+      "title": "Yoga Sutras: The Practice",
+      "subtitle": "Part I",
+      "author": "Vyaas Houston",
+      "status": "finished",
+      "dateLabel": "Aug – Oct 2026",
+      "datesApproximate": true,
+      "sortDate": "2026-10",
+      "cover": "covers/yoga-sutras.jpg",
+      "edition": {
+        "publisher": "American Sanskrit Institute",
+        "details": "A practice outline of the bhuta-jaya (mastery of the elements) and related samyama from Patanjali's Yoga Sutras",
+        "format": "Spiral-bound"
+      },
+      "notes": [],
+      "companions": [],
+      "authorNote": "Vyaas Houston is the founder of the American Sanskrit Institute. Yoga Sutras: The Practice sets out the bhuta-jaya and related samyama practices from Patanjali's Yoga Sutras.",
+      "related": [
+        {
+          "shelf": "samadhi-of-water",
+          "why": "Aug – Oct 2026"
+        },
+        {
+          "shelf": "siddhartha",
+          "why": "Nov 3–8"
         }
       ]
     }

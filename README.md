@@ -43,7 +43,6 @@ python3 -m http.server 8000
                "format": "Paperback", "isbn": "...", "pages": "541 pp." },
   "pagesPerDay": [["2026-01-02", 30], ["2026-01-03", 25]],   // optional; draws the small chart
   "paceNote": "",
-  "rating": 8,                         // optional, 1–10; leave out if unrated
   "notes": [
     { "date": "2026-02-11", "text": "A thought in my own words." },
     { "date": "2026-02-12", "text": "Another." }
@@ -60,23 +59,16 @@ python3 -m http.server 8000
 
 (Remove the `//` comments, because JSON doesn't allow them.)
 
-- The site works out **days taken** from `started` and `finished`, counting both the first and the last day. While a book is in progress, it shows "So far" using today's date in America/Chicago.
-- On the shelf, books are sorted with the most recently finished first. A book without a `finished` date shows as "Reading now" and appears first.
-- For a book you're in the middle of, you can add optional progress, which appears on the book page:
+- The site works out **days taken** from `started` and `finished`, counting both the first and the last day. While a book is in progress, it shows "So far" using today's date in America/Chicago. Days are not computed when dates are approximate.
+- The shelf is grouped by the year a book was finished, newest year first, with currently-reading books at the top. A book without a finish date (and with `"status": "reading"`) shows as "Reading now."
+- Length is a single total, e.g. `"pages": "209 pages"`. Don't put page ranges or a current page number here.
+- For a book you're in the middle of, optional progress is a short phrase, not a page number:
 
 ```json
-"progress": { "at": 136, "to": 172, "pagesRead": 37, "pagesTotal": 74, "asOf": "2026-11-11" }
+"progress": { "label": "About halfway", "asOf": "2026-11-11" }
 ```
 
-- If exact dates aren't known, set `"dateLabel": "April 2025"` (and `"datesApproximate": true`) instead of inventing a start and finish. The page won't pretend to count days.
-- The shelf is grouped by the year a book was finished, newest year first, with currently-reading books at the top. A quiet **By year** / **By rating** toggle sits above the shelf (year is the default).
-- Optional Sivers-style rating, a number from 1 to 10:
-
-```json
-"rating": 8
-```
-
-  Leave it out (or unset) if you haven't rated the book — nothing is shown, and nothing is invented. When you add one, it appears on the book page and on that book's card. **By rating** sorts rated books from high to low, then unrated ones.
+- If exact dates aren't known, set `"dateLabel": "c. April 2025"` and `"datesApproximate": true` instead of inventing a start and finish. You can also set `"sortDate": "2025-04"` (not shown) so the book lands in the right year and order.
 - Under `related`, `{"shelf": "<id>"}` points to another book on the shelf. It links to your notes for that book and is highlighted in gold. Any other related book needs `title`, `author`, `cover`, `url`, and a `status`: `read` (read, not on the shelf yet), `owned` (shows as "On my shelf"), or `list` (shows as "On my list"). These cards are dimmed and open in a new tab.
 - When you add a book that's already listed as an outside related card, change those cards to `{"shelf": "<id>"}`.
 - Run `python3 -m json.tool data/books.json` to check for typos before you publish.

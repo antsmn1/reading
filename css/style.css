@@ -96,19 +96,8 @@ h1, h2, h3 { font-family: var(--display); font-weight: 500; line-height: 1.05; m
 .card.reading { border-color: var(--gilt-soft); }
 .card.reading .tag { color: var(--gilt); }
 
-/* Year groups and sort toggle */
+/* Year groups */
 .shelf-wrap { padding-top: .5rem; }
-.shelf-tools { display: flex; justify-content: center; margin: 0 0 2.4rem; }
-.sort { display: flex; gap: 0; border: 1px solid var(--gilt-faint); border-radius: 2px; overflow: hidden; }
-.sort button {
-  appearance: none; background: transparent; border: 0; cursor: pointer;
-  font: 500 .72rem/1 var(--text); letter-spacing: .2em; text-transform: uppercase;
-  color: var(--muted); padding: .55rem 1.1rem; margin: 0;
-  transition: color .2s, background .2s;
-}
-.sort button + button { border-left: 1px solid var(--gilt-faint); }
-.sort button:hover { color: var(--parchment); }
-.sort button[aria-pressed="true"] { color: var(--gilt); background: var(--gilt-faint); }
 .year-group { margin-bottom: 3.6rem; }
 .year-head {
   font: italic 400 clamp(2rem, 5vw, 3rem)/1 var(--display);
@@ -124,13 +113,6 @@ h1, h2, h3 { font-family: var(--display); font-weight: 500; line-height: 1.05; m
 }
 .year-head::after { background: linear-gradient(270deg, transparent, var(--gilt-soft)); }
 
-/* Rating, Sivers-style, only when set */
-.rating { display: inline-block; font: italic 400 1.05rem/1 var(--display); color: var(--gilt); margin-top: .45rem; }
-.rating .of { font-style: normal; font-size: .72em; letter-spacing: .06em; color: var(--muted); margin-left: .08em; }
-.rating.lg { font-size: 2.2rem; margin: 1.15rem 0 0; }
-.rating.lg .of { font-size: .9rem; letter-spacing: .14em; vertical-align: middle; }
-.rating.tight { margin: .4rem 0 0; font-size: 1rem; }
-.rated { margin: 0; }
 
 @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .volume { animation: none; } .cover { transition: none; } }
