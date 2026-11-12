@@ -68,7 +68,7 @@ python3 -m http.server 8000
 "progress": { "label": "About halfway", "asOf": "2026-11-11" }
 ```
 
-- If exact dates aren't known, set `"dateLabel": "April 2025"` and `"datesApproximate": true` instead of inventing a start and finish. You can also set `"sortDate": "2025-04"` (not shown) so the book lands in the right year and order.
+- If exact dates aren't known, set `"dateLabel": "April 2025"` and `"datesApproximate": true` instead of inventing a start and finish. You can also set `"sortDate": "2025-04"` (not shown) so the book lands in the right year and order. When two books share the same month, an optional integer `"sort"` is a tiebreaker (higher = finished later, so it appears first in the newest-first year group). Do not invent exact dates just to order them.
 - Under `related`, `{"shelf": "<id>"}` points to another book on the shelf. It links to your notes for that book and is highlighted in gold. Any other related book needs `title`, `author`, `cover`, `url`, and a `status`: `read` (read, not on the shelf yet), `owned` (shows as "On my shelf"), or `list` (shows as "On my list"). These cards are dimmed and open in a new tab.
 - When you add a book that's already listed as an outside related card, change those cards to `{"shelf": "<id>"}`.
 - Run `python3 -m json.tool data/books.json` to check for typos before you publish.

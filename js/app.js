@@ -104,7 +104,9 @@
     return null;
   }
   function sortKey(b) {
-    return b.finished || b.sortDate || "";
+    var primary = b.finished || b.sortDate || "";
+    var tie = (typeof b.sort === "number") ? b.sort : 0;
+    return primary + ":" + String(tie).padStart(6, "0");
   }
   function volumeHTML(b, i) {
     var status = isFinished(b)

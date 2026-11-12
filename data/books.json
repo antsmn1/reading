@@ -249,7 +249,7 @@
         "publisher": "Penguin Classics",
         "details": "Deluxe Edition, translated by Robert Fagles, introduction and notes by Bernard Knox",
         "format": "Paperback",
-        "isbn": "9780143039952",
+        "isbn": "9780140268867",
         "pages": "541 pages"
       },
       "notes": [],
@@ -326,7 +326,8 @@
           "shelf": "siddhartha",
           "why": "Nov 3–8"
         }
-      ]
+      ],
+      "sort": 1
     },
     {
       "id": "yoga-sutras",
@@ -355,7 +356,8 @@
           "shelf": "siddhartha",
           "why": "Nov 3–8"
         }
-      ]
+      ],
+      "sort": 2
     }
   ]
 }
