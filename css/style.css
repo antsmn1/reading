@@ -1,4 +1,4 @@
-/* The Reading Room: ink, parchment and gilt. */
+/* Ant’s Book Shelf: ink, parchment and gilt. */
 :root {
   --ink: #0e0d0b;
   --ink-2: #16140f;
@@ -41,7 +41,7 @@ img { display: block; max-width: 100%; }
   border-bottom: 1px solid var(--gilt-faint);
 }
 .mark {
-  font: 500 1rem/1 var(--display); letter-spacing: .12em; text-decoration: none;
+  font: 500 1.15rem/1 var(--display); letter-spacing: 0; text-decoration: none;
   color: var(--gilt); width: 2.6rem; height: 2.6rem; display: grid; place-items: center;
   border: 1px solid var(--gilt-soft); border-radius: 50%;
   box-shadow: inset 0 0 0 3px var(--ink), inset 0 0 0 4px var(--gilt-faint);
@@ -91,6 +91,46 @@ h1, h2, h3 { font-family: var(--display); font-weight: 500; line-height: 1.05; m
 .caption .a { display: block; font-size: .78rem; letter-spacing: .2em; text-transform: uppercase; color: var(--parchment-dim); margin-top: .45rem; }
 .caption .d { display: block; font-size: .9rem; font-style: italic; color: var(--muted); margin-top: .2rem; }
 .volume:hover .t { color: var(--gilt); }
+.volume.reading .cover { box-shadow: 0 1px 0 rgba(255,255,255,.04), 0 18px 30px -12px rgba(0,0,0,.8), 0 0 0 1px var(--gilt-soft); }
+.volume.reading .d { color: var(--gilt); }
+.card.reading { border-color: var(--gilt-soft); }
+.card.reading .tag { color: var(--gilt); }
+
+/* Year groups and sort toggle */
+.shelf-wrap { padding-top: .5rem; }
+.shelf-tools { display: flex; justify-content: center; margin: 0 0 2.4rem; }
+.sort { display: flex; gap: 0; border: 1px solid var(--gilt-faint); border-radius: 2px; overflow: hidden; }
+.sort button {
+  appearance: none; background: transparent; border: 0; cursor: pointer;
+  font: 500 .72rem/1 var(--text); letter-spacing: .2em; text-transform: uppercase;
+  color: var(--muted); padding: .55rem 1.1rem; margin: 0;
+  transition: color .2s, background .2s;
+}
+.sort button + button { border-left: 1px solid var(--gilt-faint); }
+.sort button:hover { color: var(--parchment); }
+.sort button[aria-pressed="true"] { color: var(--gilt); background: var(--gilt-faint); }
+.year-group { margin-bottom: 3.6rem; }
+.year-head {
+  font: italic 400 clamp(2rem, 5vw, 3rem)/1 var(--display);
+  color: var(--gilt);
+  text-align: center;
+  margin: 0 auto 2.2rem;
+  display: flex; align-items: center; justify-content: center; gap: 1.2rem;
+  font-weight: 400;
+}
+.year-head::before, .year-head::after {
+  content: ""; flex: 1; max-width: 8rem; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gilt-soft));
+}
+.year-head::after { background: linear-gradient(270deg, transparent, var(--gilt-soft)); }
+
+/* Rating, Sivers-style, only when set */
+.rating { display: inline-block; font: italic 400 1.05rem/1 var(--display); color: var(--gilt); margin-top: .45rem; }
+.rating .of { font-style: normal; font-size: .72em; letter-spacing: .06em; color: var(--muted); margin-left: .08em; }
+.rating.lg { font-size: 2.2rem; margin: 1.15rem 0 0; }
+.rating.lg .of { font-size: .9rem; letter-spacing: .14em; vertical-align: middle; }
+.rating.tight { margin: .4rem 0 0; font-size: 1rem; }
+.rated { margin: 0; }
 
 @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .volume { animation: none; } .cover { transition: none; } }

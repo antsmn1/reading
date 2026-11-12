@@ -74,12 +74,8 @@
           "why": "Nov 3–8"
         },
         {
-          "title": "The Oresteia",
-          "author": "Aeschylus",
-          "cover": "covers/oresteia.jpg",
-          "status": "owned",
-          "url": "https://openlibrary.org/works/OL10328829W",
-          "why": "Agamemnon is next on the classics list"
+          "shelf": "agamemnon",
+          "why": "Started Nov 10"
         },
         {
           "title": "Great Short Works of Joseph Conrad",
@@ -168,8 +164,7 @@
           "author": "trans. Eknath Easwaran",
           "cover": "covers/dhammapada.jpg",
           "status": "owned",
-          "url": "https://openlibrary.org/works/OL29278465W",
-          "why": "Next"
+          "url": "https://openlibrary.org/works/OL29278465W"
         },
         {
           "title": "Lord of Light",
@@ -192,6 +187,51 @@
           "cover": "covers/demian.jpg",
           "status": "list",
           "url": "https://openlibrary.org/works/OL30457295W"
+        }
+      ]
+    },
+    {
+      "id": "agamemnon",
+      "title": "Agamemnon",
+      "subtitle": "from The Oresteia",
+      "author": "Aeschylus",
+      "status": "reading",
+      "started": "2026-11-10",
+      "cover": "covers/agamemnon.jpg",
+      "edition": {
+        "publisher": "Penguin Classics",
+        "details": "The Oresteia, translated by Robert Fagles. Agamemnon runs pp. 99–172 in this volume.",
+        "format": "Paperback",
+        "isbn": "9780140443332",
+        "pages": "74 pp. (pp. 99–172)"
+      },
+      "progress": {
+        "at": 136,
+        "from": 99,
+        "to": 172,
+        "pagesRead": 37,
+        "pagesTotal": 74,
+        "asOf": "2026-11-11"
+      },
+      "notes": [],
+      "companions": [],
+      "authorNote": "Aeschylus (c. 525–456 BC) was an Athenian tragic poet, often called the father of Greek tragedy. The Oresteia, first performed in 458 BC, is his only trilogy to survive complete: Agamemnon, The Libation Bearers, and The Eumenides. It won first prize at the City Dionysia that year. Of the eighty or so plays he wrote, seven survive.",
+      "related": [
+        {
+          "shelf": "siddhartha",
+          "why": "Nov 3–8"
+        },
+        {
+          "shelf": "frankenstein",
+          "why": "Oct 26 – Nov 3"
+        },
+        {
+          "title": "The Odyssey",
+          "author": "Homer, trans. Robert Fagles",
+          "cover": "covers/odyssey.jpg",
+          "status": "read",
+          "url": "https://openlibrary.org/works/OL61982W",
+          "why": "Read in 2026"
         }
       ]
     }

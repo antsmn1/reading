@@ -1,4 +1,4 @@
-/* Reading Room: renders the shelf, book pages and the Now page from data/. */
+/* Ant’s Book Shelf: renders the shelf, book pages and the Now page from data/. */
 (function () {
   "use strict";
 
@@ -33,6 +33,12 @@
   /* Calendar days, counting both the first and the last day. */
   function daysBetween(a, b) {
     return Math.round((parseDate(b) - parseDate(a)) / 86400000) + 1;
+  }
+  /* "Today" in America/Chicago, not UTC. */
+  function todayISO() {
+    return new Intl.DateTimeFormat("en-CA", {
+      timeZone: "America/Chicago", year: "numeric", month: "2-digit", day: "2-digit"
+    }).format(new Date());
   }
   function range(book) {
     if (!book.started) return "";
@@ -84,20 +90,93 @@
       '). Open this site through a web server, not straight from the file system. See README.md.</p>';
   }
 
+  function hasRating(b) {
+    var n = Number(b.rating);
+    return b.rating != null && b.rating !== "" && isFinite(n) && n >= 1 && n <= 10;
+  }
+  function ratingNum(b) { return Number(b.rating); }
+  function ratingHTML(b, cls) {
+    if (!hasRating(b)) return "";
+    var n = ratingNum(b);
+    var shown = n === Math.floor(n) ? String(n) : String(n);
+    return '<span class="' + (cls || "rating") + '" aria-label="Rated ' + shown + ' out of 10">' +
+      shown + '<span class="of">/10</span></span>';
+  }
+  function finishedYear(b) {
+    if (b.finished) return b.finished.slice(0, 4);
+    if (b.dateLabel) {
+      var m = String(b.dateLabel).match(/\b(?:19|20)\d{2}\b/g);
+      if (m) return m[m.length - 1];
+    }
+    return null;
+  }
+  function volumeHTML(b, i) {
+    var status = b.finished
+      ? (b.dateLabel || fmt(b.finished).replace(/^(\w+) \d+, /, "$1 "))
+      : STATUS.reading;
+    return '<a class="volume' + (b.finished ? "" : " reading") + '" href="book.html?id=' + encodeURIComponent(b.id) + '" style="--i:' + i + '">' +
+      '<span class="cover"><img src="' + esc(b.cover) + '" alt="Cover of ' + esc(b.title) + ', ' + esc((b.edition && b.edition.publisher) || "") + ' edition"></span>' +
+      '<span class="caption"><span class="t">' + esc(b.title) + "</span>" +
+      '<span class="a">' + esc(b.author) + "</span>" +
+      '<span class="d">' + esc(status) + "</span>" +
+      ratingHTML(b) + "</span></a>";
+  }
+  function groupHTML(heading, books, start) {
+    if (!books.length) return { html: "", next: start };
+    var html = '<section class="year-group">';
+    if (heading) html += '<h2 class="year-head">' + heading + "</h2>";
+    html += '<div class="shelf" role="list">';
+    books.forEach(function (b, i) { html += volumeHTML(b, start + i); });
+    html += "</div></section>";
+    return { html: html, next: start + books.length };
+  }
+
   /* ---------- Shelf ---------- */
   function renderShelf(data) {
     var el = document.getElementById("shelf");
-    var books = data.books.slice().sort(function (a, b) {
-      return (b.finished || "9999") .localeCompare(a.finished || "9999");
-    });
-    el.innerHTML = books.map(function (b, i) {
-      var status = b.finished ? fmt(b.finished).replace(/^(\w+) \d+, /, "$1 ") : STATUS.reading;
-      return '<a class="volume" href="book.html?id=' + encodeURIComponent(b.id) + '" style="--i:' + i + '">' +
-        '<span class="cover"><img src="' + esc(b.cover) + '" alt="Cover of ' + esc(b.title) + ', ' + esc(b.edition && b.edition.publisher) + ' edition" loading="lazy"></span>' +
-        '<span class="caption"><span class="t">' + esc(b.title) + '</span>' +
-        '<span class="a">' + esc(b.author) + '</span>' +
-        '<span class="d">' + esc(status) + '</span></span></a>';
-    }).join("");
+    var sort = "year";
+    try { sort = localStorage.getItem("shelf-sort") || "year"; } catch (e) {}
+    if (sort !== "year" && sort !== "rating") sort = "year";
+
+    function paint() {
+      var tools = '<div class="shelf-tools"><div class="sort" role="group" aria-label="Sort the shelf">' +
+        '<button type="button" data-sort="year" aria-pressed="' + (sort === "year") + '">By year</button>' +
+        '<button type="button" data-sort="rating" aria-pressed="' + (sort === "rating") + '">By rating</button>' +
+        "</div></div>";
+      var reading = data.books.filter(function (b) { return !b.finished; });
+      var done = data.books.filter(function (b) { return !!b.finished; });
+      var html = tools, n = 0, g;
+      g = groupHTML("Reading now", reading, n); html += g.html; n = g.next;
+      if (sort === "year") {
+        var years = {};
+        done.forEach(function (b) {
+          var y = finishedYear(b) || "Other";
+          (years[y] = years[y] || []).push(b);
+        });
+        Object.keys(years).sort(function (a, b) { return b.localeCompare(a); }).forEach(function (y) {
+          years[y].sort(function (a, b) { return (b.finished || "").localeCompare(a.finished || ""); });
+          g = groupHTML(esc(y), years[y], n); html += g.html; n = g.next;
+        });
+      } else {
+        var rated = done.filter(hasRating).sort(function (a, b) {
+          var d = ratingNum(b) - ratingNum(a);
+          return d !== 0 ? d : (b.finished || "").localeCompare(a.finished || "");
+        });
+        var unrated = done.filter(function (b) { return !hasRating(b); })
+          .sort(function (a, b) { return (b.finished || "").localeCompare(a.finished || ""); });
+        g = groupHTML(rated.length ? "Rated" : "", rated, n); html += g.html; n = g.next;
+        g = groupHTML(rated.length && unrated.length ? "Unrated" : "", unrated, n); html += g.html; n = g.next;
+      }
+      el.innerHTML = html;
+      Array.prototype.forEach.call(el.querySelectorAll(".sort button"), function (btn) {
+        btn.addEventListener("click", function () {
+          sort = btn.getAttribute("data-sort");
+          try { localStorage.setItem("shelf-sort", sort); } catch (e) {}
+          paint();
+        });
+      });
+    }
+    paint();
   }
 
   /* ---------- Book ---------- */
@@ -123,8 +202,8 @@
     var title = b ? b.title : r.title, author = b ? b.author : r.author;
     var cover = b ? b.cover : r.cover;
     var href = b ? "book.html?id=" + encodeURIComponent(b.id) : r.url;
-    var label = b ? "Read · my notes" : (STATUS[r.status] || "");
-    var cls = b ? "card on-shelf" : "card off-shelf status-" + esc(r.status || "");
+    var label = b ? (b.finished ? "Read · my notes" : "Reading now") : (STATUS[r.status] || "");
+    var cls = b ? "card on-shelf" + (b.finished ? "" : " reading") : "card off-shelf status-" + esc(r.status || "");
     var ext = !b && href ? ' target="_blank" rel="noopener"' : "";
     var tag = href ? "a" : "div";
     return "<" + tag + ' class="' + cls + '"' + (href ? ' href="' + esc(href) + '"' : "") + ext + ">" +
@@ -132,7 +211,8 @@
       '<span class="meta"><span class="tag">' + esc(label) + (ext ? ' <span aria-hidden="true">↗</span>' : "") + "</span>" +
       '<span class="t">' + esc(title) + "</span>" +
       '<span class="a">' + esc(author) + "</span>" +
-      (r.why ? '<span class="why">' + esc(r.why) + "</span>" : "") + "</span></" + tag + ">";
+      (r.why ? '<span class="why">' + esc(r.why) + "</span>" : "") +
+      (b ? ratingHTML(b, "rating tight") : "") + "</span></" + tag + ">";
   }
   function renderBook(data) {
     var el = document.getElementById("book");
@@ -144,16 +224,26 @@
       el.innerHTML = '<section class="intro"><h1>Not on the shelf</h1><p class="lede"><a href="index.html">Back to the shelf</a></p></section>';
       return;
     }
-    document.title = b.title + " · Anthony Cramer";
+    document.title = b.title + " · Ant’s Book Shelf";
     var e = b.edition || {};
     var facts = [];
-    if (b.started) facts.push(["Read", range(b)]);
-    if (b.started && b.finished) facts.push(["Took", daysBetween(b.started, b.finished) + " days"]);
-    else if (b.started) facts.push(["So far", daysBetween(b.started, new Date().toISOString().slice(0, 10)) + " days"]);
+    if (b.dateLabel) facts.push(["Read", b.dateLabel]);
+    else if (b.started) facts.push(["Read", range(b)]);
+    if (b.started && b.finished && !b.datesApproximate) facts.push(["Took", daysBetween(b.started, b.finished) + " days"]);
+    else if (b.started && !b.finished) facts.push(["So far", daysBetween(b.started, todayISO()) + " days"]);
+    if (b.progress) {
+      var pr = b.progress;
+      var ps = "p. " + pr.at;
+      if (pr.to) ps += " of " + pr.to;
+      if (pr.pagesRead && pr.pagesTotal) ps += " (" + pr.pagesRead + " of " + pr.pagesTotal + " pages)";
+      if (pr.asOf) ps += ", as of " + fmtShort(pr.asOf);
+      facts.push(["Progress", ps]);
+    }
     facts.push(["Edition", [e.publisher, e.format].filter(Boolean).join(", ")]);
     if (e.details) facts.push(["", e.details]);
     if (e.pages) facts.push(["Length", e.pages]);
     if (e.isbn) facts.push(["ISBN", e.isbn]);
+    /* Rating is shown under the title, Sivers-style, not in the facts table. */
 
     var notes = b.notes || [];
     var notesHtml;
@@ -175,11 +265,13 @@
       '<p class="crumb"><a href="index.html">← The shelf</a></p>' +
       '<article class="book">' +
         '<aside class="plate"><figure><img src="' + esc(b.cover) + '" alt="Cover of the ' + esc(e.publisher) + " edition of " + esc(b.title) + '">' +
-          "<figcaption>The copy I read</figcaption></figure></aside>" +
+          "<figcaption>" + (b.finished ? "The copy I read" : "The copy I’m reading") + "</figcaption></figure></aside>" +
         '<div class="body">' +
           '<header class="title"><p class="eyebrow">' + esc(b.finished ? STATUS.finished : STATUS.reading) + "</p>" +
             "<h1>" + esc(b.title) + "</h1>" + (b.subtitle ? '<p class="sub">' + esc(b.subtitle) + "</p>" : "") +
-            '<p class="by">' + esc(b.author) + "</p></header>" +
+            '<p class="by">' + esc(b.author) + "</p>" +
+            (hasRating(b) ? '<p class="rated">' + ratingHTML(b, "rating lg") + "</p>" : "") +
+            "</header>" +
           '<dl class="facts">' + facts.map(function (f) { return "<dt>" + esc(f[0]) + "</dt><dd>" + esc(f[1]) + "</dd>"; }).join("") + "</dl>" +
           '<div class="flourish" aria-hidden="true"><span></span>&#10086;<span></span></div>' +
           '<section class="block notes"><h2>Notes</h2>' + notesHtml + "</section>" +
