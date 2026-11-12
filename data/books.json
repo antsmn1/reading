@@ -219,11 +219,11 @@
       "related": [
         {
           "shelf": "odyssey",
-          "why": "c. late May – June 2026"
+          "why": "May – June 2026"
         },
         {
           "shelf": "iliad",
-          "why": "c. April 2025"
+          "why": "April 2025"
         },
         {
           "shelf": "siddhartha",
@@ -241,7 +241,7 @@
       "subtitle": "",
       "author": "Homer",
       "status": "finished",
-      "dateLabel": "c. late May – June 2026",
+      "dateLabel": "May – June 2026",
       "datesApproximate": true,
       "sortDate": "2026-06",
       "cover": "covers/odyssey.jpg",
@@ -258,7 +258,7 @@
       "related": [
         {
           "shelf": "iliad",
-          "why": "c. April 2025"
+          "why": "April 2025"
         },
         {
           "shelf": "agamemnon",
@@ -272,7 +272,7 @@
       "subtitle": "The Anger of Achilles, translated by Robert Graves",
       "author": "Homer",
       "status": "finished",
-      "dateLabel": "c. April 2025",
+      "dateLabel": "April 2025",
       "datesApproximate": true,
       "sortDate": "2025-04",
       "cover": "covers/iliad.jpg",
@@ -289,7 +289,7 @@
       "related": [
         {
           "shelf": "odyssey",
-          "why": "c. late May – June 2026"
+          "why": "May – June 2026"
         },
         {
           "shelf": "agamemnon",

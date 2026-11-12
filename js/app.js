@@ -91,7 +91,8 @@
   }
 
   function isFinished(b) {
-    return b.status === "finished" || !!(b.finished) || !!(b.dateLabel && b.status !== "reading");
+    // Only explicit status "reading" is in progress — never a missing finish date.
+    return b.status !== "reading";
   }
   function finishedYear(b) {
     if (b.finished && /^\d{4}/.test(b.finished)) return b.finished.slice(0, 4);
