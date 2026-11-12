@@ -288,6 +288,10 @@
       "authorNote": "Homer is the name given to the poet — or poets — of the Iliad and the Odyssey, the Greek epics traditionally dated to the late eighth or early seventh century BC. Almost nothing about the historical author is known with certainty; the poems were composed in a long oral tradition and later written down. They stand at the beginning of the Western literary canon, and at the beginning of my own list from Homer to Shakespeare.",
       "related": [
         {
+          "shelf": "last-days-of-socrates",
+          "why": "March 13 – April 28"
+        },
+        {
           "shelf": "odyssey",
           "why": "May – June 2026"
         },
@@ -358,6 +362,40 @@
         }
       ],
       "sort": 2
+    },
+    {
+      "id": "last-days-of-socrates",
+      "title": "The Last Days of Socrates",
+      "subtitle": "Euthyphro, Apology, Crito, Phaedo",
+      "author": "Plato",
+      "status": "finished",
+      "started": "2025-03-13",
+      "finished": "2025-04-28",
+      "cover": "covers/last-days-of-socrates.jpg",
+      "edition": {
+        "publisher": "Penguin Classics",
+        "details": "Translated and with commentary by Christopher Rowe",
+        "format": "Paperback",
+        "isbn": "9780140455496",
+        "pages": "256 pages"
+      },
+      "notes": [],
+      "companions": [],
+      "authorNote": "Plato (c. 429–347 BC) was an Athenian philosopher, a student of Socrates and the teacher of Aristotle. He founded the Academy in Athens. His dialogues are the principal surviving portrait of Socrates. The Last Days of Socrates collects four of them — Euthyphro, the Apology, Crito, and Phaedo — covering Socrates’ indictment, trial, imprisonment, and death.",
+      "related": [
+        {
+          "shelf": "iliad",
+          "why": "April 2025"
+        },
+        {
+          "shelf": "odyssey",
+          "why": "May – June 2026"
+        },
+        {
+          "shelf": "agamemnon",
+          "why": "Started Nov 10"
+        }
+      ]
     }
   ]
 }

@@ -105,6 +105,8 @@
   }
   function sortKey(b) {
     var primary = b.finished || b.sortDate || "";
+    // Pad YYYY-MM so it compares in finish-date order with YYYY-MM-DD.
+    if (/^\d{4}-\d{2}$/.test(primary)) primary += "-00";
     var tie = (typeof b.sort === "number") ? b.sort : 0;
     return primary + ":" + String(tie).padStart(6, "0");
   }
