@@ -1,0 +1,199 @@
+{
+  "books": [
+    {
+      "id": "frankenstein",
+      "title": "Frankenstein",
+      "subtitle": "The 1818 Text",
+      "author": "Mary Shelley",
+      "status": "finished",
+      "started": "2026-10-26",
+      "finished": "2026-11-03",
+      "cover": "covers/frankenstein.jpg",
+      "edition": {
+        "publisher": "Penguin Classics",
+        "details": "The 1818 text, introduction by Charlotte Gordon",
+        "format": "Paperback",
+        "isbn": "9780143131847",
+        "pages": "pp. 3–216"
+      },
+      "pagesPerDay": [
+        [
+          "2026-10-26",
+          16
+        ],
+        [
+          "2026-10-27",
+          42
+        ],
+        [
+          "2026-10-28",
+          17
+        ],
+        [
+          "2026-10-29",
+          23
+        ],
+        [
+          "2026-10-30",
+          13
+        ],
+        [
+          "2026-10-31",
+          9
+        ],
+        [
+          "2026-11-01",
+          19
+        ],
+        [
+          "2026-11-02",
+          50
+        ],
+        [
+          "2026-11-03",
+          21
+        ]
+      ],
+      "paceNote": "From the reading log. Oct 30 is an assumed end page (no later page reported).",
+      "notes": [
+        {
+          "date": "2026-10-26",
+          "text": "Starts better than anticipated, immediate interest"
+        }
+      ],
+      "companions": [
+        {
+          "label": "BBC In Our Time: “Frankenstein” (2019, 55 min)",
+          "url": "https://www.bbc.co.uk/sounds/play/m00051n6"
+        }
+      ],
+      "authorNote": "Mary Wollstonecraft Shelley (1797–1851) was the daughter of the philosopher William Godwin and the writer Mary Wollstonecraft. She began Frankenstein in the summer of 1816 near Geneva, during a ghost-story challenge with Lord Byron and Percy Shelley, and it was published anonymously in 1818, when she was twenty. She revised it for an 1831 edition; this is the original 1818 text. Her other novels include The Last Man (1826).",
+      "related": [
+        {
+          "shelf": "siddhartha",
+          "why": "Nov 3–8"
+        },
+        {
+          "title": "The Oresteia",
+          "author": "Aeschylus",
+          "cover": "covers/oresteia.jpg",
+          "status": "owned",
+          "url": "https://openlibrary.org/works/OL10328829W",
+          "why": "Agamemnon is next on the classics list"
+        },
+        {
+          "title": "Great Short Works of Joseph Conrad",
+          "author": "Joseph Conrad",
+          "cover": "covers/conrad.jpg",
+          "status": "owned",
+          "url": "https://openlibrary.org/works/OL38977W",
+          "why": "Includes Heart of Darkness"
+        },
+        {
+          "title": "Paradise Lost",
+          "author": "John Milton",
+          "cover": "covers/paradise-lost.jpg",
+          "status": "list",
+          "url": "https://openlibrary.org/works/OL810991W",
+          "why": "On the classics list"
+        },
+        {
+          "title": "Dracula",
+          "author": "Bram Stoker",
+          "cover": "covers/dracula.jpg",
+          "status": "list",
+          "url": "https://openlibrary.org/works/OL85892W",
+          "why": "Halloween 2027"
+        }
+      ]
+    },
+    {
+      "id": "siddhartha",
+      "title": "Siddhartha",
+      "subtitle": "",
+      "author": "Hermann Hesse",
+      "status": "finished",
+      "started": "2026-11-03",
+      "finished": "2026-11-08",
+      "cover": "covers/siddhartha.jpg",
+      "edition": {
+        "publisher": "Penguin Drop Caps",
+        "details": "Translated by Joachim Neugroschel, cover by Jessica Hische",
+        "format": "Hardcover (library copy)",
+        "isbn": "9780143124337",
+        "pages": "209 pp."
+      },
+      "pagesPerDay": [
+        [
+          "2026-11-03",
+          21
+        ],
+        [
+          "2026-11-04",
+          48
+        ],
+        [
+          "2026-11-05",
+          38
+        ],
+        [
+          "2026-11-06",
+          36
+        ],
+        [
+          "2026-11-07",
+          36
+        ],
+        [
+          "2026-11-08",
+          30
+        ]
+      ],
+      "paceNote": "From the reading log. The first day's count is provisional. Drop Caps pages hold much less text, so this pace isn't comparable with other books.",
+      "notes": [
+        {
+          "date": "2026-11-05",
+          "text": "this book is great. its what i wanted from lord of light in retrospect lol"
+        }
+      ],
+      "companions": [],
+      "authorNote": "Hermann Hesse (1877–1962) was a German-born novelist and poet who became a Swiss citizen. His mother was born in India and his grandfather was a missionary scholar there, and he travelled to South and Southeast Asia in 1911. Siddhartha was published in 1922. His other novels include Demian (1919), Steppenwolf (1927), and The Glass Bead Game (1943). He received the Nobel Prize in Literature in 1946.",
+      "related": [
+        {
+          "shelf": "frankenstein",
+          "why": "Oct 26 – Nov 3"
+        },
+        {
+          "title": "The Dhammapada",
+          "author": "trans. Eknath Easwaran",
+          "cover": "covers/dhammapada.jpg",
+          "status": "owned",
+          "url": "https://openlibrary.org/works/OL29278465W",
+          "why": "Next"
+        },
+        {
+          "title": "Lord of Light",
+          "author": "Roger Zelazny",
+          "cover": "covers/lord-of-light.jpg",
+          "status": "read",
+          "url": "https://openlibrary.org/works/OL13992W"
+        },
+        {
+          "title": "Tao Te Ching",
+          "author": "Lao Tzu",
+          "cover": "covers/tao-te-ching.jpg",
+          "status": "list",
+          "url": "https://openlibrary.org/works/OL45499W",
+          "why": "Planned for 2027, with Alan Watts lectures"
+        },
+        {
+          "title": "Demian",
+          "author": "Hermann Hesse",
+          "cover": "covers/demian.jpg",
+          "status": "list",
+          "url": "https://openlibrary.org/works/OL30457295W"
+        }
+      ]
+    }
+  ]
+}
