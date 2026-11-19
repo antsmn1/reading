@@ -1,74 +1,39 @@
 {
   "books": [
     {
-      "id": "eumenides",
-      "title": "The Eumenides",
-      "subtitle": "from The Oresteia",
+      "id": "oresteia",
+      "aliases": [
+        "agamemnon",
+        "eumenides",
+        "libation-bearers"
+      ],
+      "title": "The Oresteia",
+      "subtitle": "Agamemnon, The Libation Bearers, The Eumenides",
       "author": "Aeschylus",
       "status": "finished",
-      "started": "2026-11-17",
-      "cover": "covers/agamemnon.jpg",
-      "edition": {
-        "publisher": "Penguin Classics",
-        "details": "The Oresteia, translated by Robert Fagles",
-        "format": "Paperback",
-        "isbn": "9780140443332",
-        "pages": "51 pages"
-      },
-      "notes": [],
-      "companions": [],
-      "authorNote": "Aeschylus (c. 525–456 BC) was an Athenian tragic poet, often called the father of Greek tragedy. The Oresteia, first performed in 458 BC, is his only trilogy to survive complete: Agamemnon, The Libation Bearers, and The Eumenides. It won first prize at the City Dionysia that year. Of the eighty or so plays he wrote, seven survive.",
-      "related": [
-        {
-          "shelf": "agamemnon",
-          "why": "Nov 10–15"
-        },
-        {
-          "shelf": "libation-bearers",
-          "why": "Nov 15–17"
-        },
-        {
-          "shelf": "odyssey",
-          "why": "May – June 2026"
-        }
-      ],
+      "started": "2026-11-10",
       "finished": "2026-11-18",
-      "sort": 3
-    },
-    {
-      "id": "libation-bearers",
-      "title": "The Libation Bearers",
-      "subtitle": "from The Oresteia",
-      "author": "Aeschylus",
-      "status": "finished",
-      "started": "2026-11-15",
-      "cover": "covers/agamemnon.jpg",
+      "cover": "covers/oresteia.jpg",
       "edition": {
         "publisher": "Penguin Classics",
-        "details": "The Oresteia, translated by Robert Fagles",
+        "details": "Translated by Robert Fagles, introductory essay, notes and glossary by Robert Fagles and W. B. Stanford",
         "format": "Paperback",
         "isbn": "9780140443332",
-        "pages": "52 pages"
+        "pages": "337 pages"
       },
       "notes": [],
       "companions": [],
       "authorNote": "Aeschylus (c. 525–456 BC) was an Athenian tragic poet, often called the father of Greek tragedy. The Oresteia, first performed in 458 BC, is his only trilogy to survive complete: Agamemnon, The Libation Bearers, and The Eumenides. It won first prize at the City Dionysia that year. Of the eighty or so plays he wrote, seven survive.",
       "related": [
         {
-          "shelf": "agamemnon",
-          "why": "Nov 10–15"
-        },
-        {
-          "shelf": "eumenides",
-          "why": "Nov 17–18"
-        },
-        {
           "shelf": "odyssey",
           "why": "May – June 2026"
+        },
+        {
+          "shelf": "iliad",
+          "why": "June 25, 2025"
         }
-      ],
-      "finished": "2026-11-17",
-      "sort": 2
+      ]
     },
     {
       "id": "frankenstein",
@@ -144,8 +109,8 @@
           "why": "Nov 3–8"
         },
         {
-          "shelf": "agamemnon",
-          "why": "Nov 10–15"
+          "shelf": "oresteia",
+          "why": "Nov 10–18"
         },
         {
           "title": "Great Short Works of Joseph Conrad",
@@ -265,45 +230,6 @@
       ]
     },
     {
-      "id": "agamemnon",
-      "title": "Agamemnon",
-      "subtitle": "from The Oresteia",
-      "author": "Aeschylus",
-      "status": "finished",
-      "started": "2026-11-10",
-      "cover": "covers/agamemnon.jpg",
-      "edition": {
-        "publisher": "Penguin Classics",
-        "details": "The Oresteia, translated by Robert Fagles",
-        "format": "Paperback",
-        "isbn": "9780140443332",
-        "pages": "76 pages"
-      },
-      "notes": [],
-      "companions": [],
-      "authorNote": "Aeschylus (c. 525–456 BC) was an Athenian tragic poet, often called the father of Greek tragedy. The Oresteia, first performed in 458 BC, is his only trilogy to survive complete: Agamemnon, The Libation Bearers, and The Eumenides. It won first prize at the City Dionysia that year. Of the eighty or so plays he wrote, seven survive.",
-      "related": [
-        {
-          "shelf": "libation-bearers",
-          "why": "Nov 15–17"
-        },
-        {
-          "shelf": "eumenides",
-          "why": "Nov 17–18"
-        },
-        {
-          "shelf": "odyssey",
-          "why": "May – June 2026"
-        },
-        {
-          "shelf": "iliad",
-          "why": "June 25, 2025"
-        }
-      ],
-      "finished": "2026-11-15",
-      "sort": 1
-    },
-    {
       "id": "odyssey",
       "title": "The Odyssey",
       "subtitle": "",
@@ -329,8 +255,8 @@
           "why": "June 25, 2025"
         },
         {
-          "shelf": "agamemnon",
-          "why": "Nov 10–15"
+          "shelf": "oresteia",
+          "why": "Nov 10–18"
         }
       ]
     },
@@ -361,8 +287,8 @@
           "why": "May – June 2026"
         },
         {
-          "shelf": "agamemnon",
-          "why": "Nov 10–15"
+          "shelf": "oresteia",
+          "why": "Nov 10–18"
         }
       ],
       "finished": "2025-06-25"
@@ -458,8 +384,8 @@
           "why": "May – June 2026"
         },
         {
-          "shelf": "agamemnon",
-          "why": "Nov 10–15"
+          "shelf": "oresteia",
+          "why": "Nov 10–18"
         }
       ]
     }

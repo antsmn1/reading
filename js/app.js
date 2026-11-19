@@ -192,6 +192,11 @@
     data.books.forEach(function (b) { byId[b.id] = b; });
     var b = byId[id];
     if (!b) {
+      // Old ids (e.g. the three Oresteia plays) point to the merged entry.
+      b = data.books.filter(function (x) { return (x.aliases || []).indexOf(id) !== -1; })[0];
+      if (b && history.replaceState) history.replaceState(null, "", "book.html?id=" + encodeURIComponent(b.id));
+    }
+    if (!b) {
       el.innerHTML = '<section class="intro"><h1>Not on the shelf</h1><p class="lede"><a href="index.html">Back to the shelf</a></p></section>';
       return;
     }
