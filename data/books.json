@@ -1,6 +1,76 @@
 {
   "books": [
     {
+      "id": "eumenides",
+      "title": "The Eumenides",
+      "subtitle": "from The Oresteia",
+      "author": "Aeschylus",
+      "status": "finished",
+      "started": "2026-11-17",
+      "cover": "covers/agamemnon.jpg",
+      "edition": {
+        "publisher": "Penguin Classics",
+        "details": "The Oresteia, translated by Robert Fagles",
+        "format": "Paperback",
+        "isbn": "9780140443332",
+        "pages": "51 pages"
+      },
+      "notes": [],
+      "companions": [],
+      "authorNote": "Aeschylus (c. 525–456 BC) was an Athenian tragic poet, often called the father of Greek tragedy. The Oresteia, first performed in 458 BC, is his only trilogy to survive complete: Agamemnon, The Libation Bearers, and The Eumenides. It won first prize at the City Dionysia that year. Of the eighty or so plays he wrote, seven survive.",
+      "related": [
+        {
+          "shelf": "agamemnon",
+          "why": "Nov 10–15"
+        },
+        {
+          "shelf": "libation-bearers",
+          "why": "Nov 15–17"
+        },
+        {
+          "shelf": "odyssey",
+          "why": "May – June 2026"
+        }
+      ],
+      "finished": "2026-11-18",
+      "sort": 3
+    },
+    {
+      "id": "libation-bearers",
+      "title": "The Libation Bearers",
+      "subtitle": "from The Oresteia",
+      "author": "Aeschylus",
+      "status": "finished",
+      "started": "2026-11-15",
+      "cover": "covers/agamemnon.jpg",
+      "edition": {
+        "publisher": "Penguin Classics",
+        "details": "The Oresteia, translated by Robert Fagles",
+        "format": "Paperback",
+        "isbn": "9780140443332",
+        "pages": "52 pages"
+      },
+      "notes": [],
+      "companions": [],
+      "authorNote": "Aeschylus (c. 525–456 BC) was an Athenian tragic poet, often called the father of Greek tragedy. The Oresteia, first performed in 458 BC, is his only trilogy to survive complete: Agamemnon, The Libation Bearers, and The Eumenides. It won first prize at the City Dionysia that year. Of the eighty or so plays he wrote, seven survive.",
+      "related": [
+        {
+          "shelf": "agamemnon",
+          "why": "Nov 10–15"
+        },
+        {
+          "shelf": "eumenides",
+          "why": "Nov 17–18"
+        },
+        {
+          "shelf": "odyssey",
+          "why": "May – June 2026"
+        }
+      ],
+      "finished": "2026-11-17",
+      "sort": 2
+    },
+    {
       "id": "frankenstein",
       "title": "Frankenstein",
       "subtitle": "The 1818 Text",
@@ -75,7 +145,7 @@
         },
         {
           "shelf": "agamemnon",
-          "why": "Started Nov 10"
+          "why": "Nov 10–15"
         },
         {
           "title": "Great Short Works of Joseph Conrad",
@@ -199,7 +269,7 @@
       "title": "Agamemnon",
       "subtitle": "from The Oresteia",
       "author": "Aeschylus",
-      "status": "reading",
+      "status": "finished",
       "started": "2026-11-10",
       "cover": "covers/agamemnon.jpg",
       "edition": {
@@ -207,16 +277,20 @@
         "details": "The Oresteia, translated by Robert Fagles",
         "format": "Paperback",
         "isbn": "9780140443332",
-        "pages": "74 pages"
-      },
-      "progress": {
-        "label": "About halfway",
-        "asOf": "2026-11-11"
+        "pages": "76 pages"
       },
       "notes": [],
       "companions": [],
       "authorNote": "Aeschylus (c. 525–456 BC) was an Athenian tragic poet, often called the father of Greek tragedy. The Oresteia, first performed in 458 BC, is his only trilogy to survive complete: Agamemnon, The Libation Bearers, and The Eumenides. It won first prize at the City Dionysia that year. Of the eighty or so plays he wrote, seven survive.",
       "related": [
+        {
+          "shelf": "libation-bearers",
+          "why": "Nov 15–17"
+        },
+        {
+          "shelf": "eumenides",
+          "why": "Nov 17–18"
+        },
         {
           "shelf": "odyssey",
           "why": "May – June 2026"
@@ -224,16 +298,10 @@
         {
           "shelf": "iliad",
           "why": "June 25, 2025"
-        },
-        {
-          "shelf": "siddhartha",
-          "why": "Nov 3–8"
-        },
-        {
-          "shelf": "frankenstein",
-          "why": "Oct 26 – Nov 3"
         }
-      ]
+      ],
+      "finished": "2026-11-15",
+      "sort": 1
     },
     {
       "id": "odyssey",
@@ -262,7 +330,7 @@
         },
         {
           "shelf": "agamemnon",
-          "why": "Started Nov 10"
+          "why": "Nov 10–15"
         }
       ]
     },
@@ -294,7 +362,7 @@
         },
         {
           "shelf": "agamemnon",
-          "why": "Started Nov 10"
+          "why": "Nov 10–15"
         }
       ],
       "finished": "2025-06-25"
@@ -391,7 +459,7 @@
         },
         {
           "shelf": "agamemnon",
-          "why": "Started Nov 10"
+          "why": "Nov 10–15"
         }
       ]
     }

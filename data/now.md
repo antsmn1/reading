@@ -1,10 +1,10 @@
 ---
-updated: 2026-11-11
+updated: 2026-11-18
 ---
 
-**Reading.** I'm reading *Agamemnon*, in Robert Fagles's translation (the Penguin *Oresteia*). As of November 11, I'm about halfway through the play.
+**Reading.** I finished the whole *Oresteia* (*Agamemnon*, *The Libation Bearers*, *The Eumenides*) in Robert Fagles's translation on November 18, two days ahead of my goal. Next up on my list is *Oedipus Rex*.
 
-**Classics.** I'm working through my own list from Homer to Shakespeare. The *Iliad* and *Odyssey* are done.
+**Classics.** I'm working through my own list from Homer to Shakespeare. The *Iliad*, *Odyssey*, and *Oresteia* are done.
 
 **Notebook.** I keep a paper notebook while I read: the title at the top, passages with page numbers, and whatever strikes me.
 
